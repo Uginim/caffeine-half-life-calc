@@ -106,6 +106,71 @@ label {
     color: var(--text-secondary);
 }
 
+/* Coffee Presets */
+.coffee-presets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.preset-btn {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 12px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.preset-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2);
+    border-color: var(--accent-color);
+}
+
+.preset-btn:active {
+    transform: translateY(-2px);
+}
+
+.preset-btn.selected {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    border-color: var(--primary-dark);
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.preset-btn.selected .preset-name,
+.preset-btn.selected .preset-caffeine {
+    color: white;
+}
+
+.preset-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.preset-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.preset-caffeine {
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
 input[type="number"],
 input[type="time"] {
     width: 100%;
@@ -334,6 +399,10 @@ canvas {
         border-radius: 15px;
     }
 
+    .coffee-presets {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .big-number {
         font-size: 3rem;
     }
@@ -356,6 +425,28 @@ canvas {
 @media (max-width: 480px) {
     h1 {
         font-size: 1.75rem;
+    }
+
+    .coffee-presets {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .preset-btn {
+        padding: 10px 6px;
+        min-height: 95px;
+    }
+
+    .preset-icon {
+        font-size: 1.8rem;
+    }
+
+    .preset-name {
+        font-size: 0.7rem;
+    }
+
+    .preset-caffeine {
+        font-size: 0.65rem;
     }
 
     .big-number {
@@ -407,5 +498,19 @@ canvas {
 
     .info-card {
         background: linear-gradient(135deg, #2C2C2C 0%, #3C2C1C 100%);
+    }
+
+    .preset-btn {
+        background: linear-gradient(135deg, #3C3C3C 0%, #2C2C2C 100%);
+        border-color: #4C4C4C;
+    }
+
+    .preset-btn:hover {
+        border-color: var(--accent-color);
+        background: linear-gradient(135deg, #4C4C4C 0%, #3C3C3C 100%);
+    }
+
+    .preset-btn .preset-name {
+        color: var(--text-primary);
     }
 }
