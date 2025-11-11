@@ -10,6 +10,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeString = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
     document.getElementById('intake-time').value = timeString;
 
+    // Event listeners for preset buttons
+    const presetButtons = document.querySelectorAll('.preset-btn');
+    presetButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Remove selected class from all buttons
+            presetButtons.forEach(btn => btn.classList.remove('selected'));
+
+            // Add selected class to clicked button
+            button.classList.add('selected');
+
+            // Set caffeine amount
+            const caffeineAmount = button.getAttribute('data-caffeine');
+            document.getElementById('caffeine-amount').value = caffeineAmount;
+
+            // Optional: Show a subtle animation
+            const input = document.getElementById('caffeine-amount');
+            input.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                input.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
+
     // Event listeners
     document.getElementById('calculate-btn').addEventListener('click', calculate);
 
@@ -20,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 calculate();
             }
         });
+    });
+
+    // When user manually types in caffeine amount, deselect all preset buttons
+    document.getElementById('caffeine-amount').addEventListener('input', () => {
+        presetButtons.forEach(btn => btn.classList.remove('selected'));
     });
 });
 

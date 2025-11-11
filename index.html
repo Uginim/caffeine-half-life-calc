@@ -17,9 +17,73 @@
         <div class="card">
             <div class="input-section">
                 <div class="input-group">
+                    <label>
+                        <span class="label-text">어떤 커피를 마셨나요?</span>
+                        <span class="label-hint">자주 마시는 커피를 선택하세요</span>
+                    </label>
+                    <div class="coffee-presets">
+                        <button class="preset-btn" data-caffeine="150" data-name="스타벅스 아메리카노 톨">
+                            <span class="preset-icon">☕</span>
+                            <span class="preset-name">스타벅스<br>아메리카노</span>
+                            <span class="preset-caffeine">150mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="155" data-name="스타벅스 콜드브루 톨">
+                            <span class="preset-icon">🧊</span>
+                            <span class="preset-name">스타벅스<br>콜드브루</span>
+                            <span class="preset-caffeine">155mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="75" data-name="스타벅스 카페라떼 톨">
+                            <span class="preset-icon">🥛</span>
+                            <span class="preset-name">스타벅스<br>카페라떼</span>
+                            <span class="preset-caffeine">75mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="75" data-name="에스프레소 1샷">
+                            <span class="preset-icon">☕</span>
+                            <span class="preset-name">에스프레소<br>1샷</span>
+                            <span class="preset-caffeine">75mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="180" data-name="메가커피 아메리카노">
+                            <span class="preset-icon">🥤</span>
+                            <span class="preset-name">메가커피<br>아메리카노</span>
+                            <span class="preset-caffeine">180mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="125" data-name="투썸플레이스 아메리카노">
+                            <span class="preset-icon">☕</span>
+                            <span class="preset-name">투썸<br>아메리카노</span>
+                            <span class="preset-caffeine">125mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="120" data-name="편의점 아메리카노">
+                            <span class="preset-icon">🏪</span>
+                            <span class="preset-name">편의점<br>아메리카노</span>
+                            <span class="preset-caffeine">120mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="90" data-name="맥심 TOP 캔커피">
+                            <span class="preset-icon">🥫</span>
+                            <span class="preset-name">맥심 TOP<br>캔커피</span>
+                            <span class="preset-caffeine">90mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="80" data-name="레드불">
+                            <span class="preset-icon">🪽</span>
+                            <span class="preset-name">레드불</span>
+                            <span class="preset-caffeine">80mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="60" data-name="핫식스">
+                            <span class="preset-icon">🔥</span>
+                            <span class="preset-name">핫식스</span>
+                            <span class="preset-caffeine">60mg</span>
+                        </button>
+                        <button class="preset-btn" data-caffeine="160" data-name="몬스터 에너지">
+                            <span class="preset-icon">👾</span>
+                            <span class="preset-name">몬스터<br>에너지</span>
+                            <span class="preset-caffeine">160mg</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
                     <label for="caffeine-amount">
                         <span class="label-text">카페인 양 (mg)</span>
-                        <span class="label-hint">예: 아메리카노 150mg, 에스프레소 63mg</span>
+                        <span class="label-hint">또는 직접 입력하세요</span>
                     </label>
                     <input type="number" id="caffeine-amount" placeholder="150" min="0" step="1">
                 </div>
