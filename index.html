@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="카페인 반감기 계산기 - 내 몸속 카페인 수치를 실시간으로 확인하세요">
+    <title>☕ 카페인 반감기 계산기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ 카페인 반감기 계산기</h1>
+            <p class="subtitle">내 몸속 카페인이 언제 사라질까요?</p>
+        </header>
+
+        <div class="card">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="caffeine-amount">
+                        <span class="label-text">카페인 양 (mg)</span>
+                        <span class="label-hint">예: 아메리카노 150mg, 에스프레소 63mg</span>
+                    </label>
+                    <input type="number" id="caffeine-amount" placeholder="150" min="0" step="1">
+                </div>
+
+                <div class="input-group">
+                    <label for="intake-time">
+                        <span class="label-text">섭취 시간</span>
+                    </label>
+                    <input type="time" id="intake-time">
+                </div>
+
+                <div class="input-group">
+                    <label for="half-life">
+                        <span class="label-text">반감기 (시간)</span>
+                        <span class="label-hint">성인 평균: 5시간</span>
+                    </label>
+                    <input type="number" id="half-life" value="5" min="1" max="12" step="0.5">
+                </div>
+
+                <button id="calculate-btn" class="btn-primary">계산하기</button>
+            </div>
+        </div>
+
+        <div id="result-section" class="result-section hidden">
+            <div class="card">
+                <h2>현재 카페인 수치</h2>
+                <div class="current-caffeine">
+                    <div class="caffeine-value">
+                        <span id="current-amount" class="big-number">0</span>
+                        <span class="unit">mg</span>
+                    </div>
+                    <div class="caffeine-percentage">
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                        <span id="percentage" class="percentage-text">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>시간별 카페인 잔량</h2>
+                <canvas id="caffeine-chart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>예상 타임라인</h2>
+                <div id="timeline" class="timeline"></div>
+            </div>
+
+            <div class="info-card">
+                <h3>💡 알아두면 좋아요</h3>
+                <ul>
+                    <li>카페인 반감기는 개인차가 있어요 (3-7시간)</li>
+                    <li>흡연자는 반감기가 짧고, 임신 중에는 길어져요</li>
+                    <li>수면 6시간 전까지 카페인 섭취를 피하는 게 좋아요</li>
+                    <li>성인 1일 권장량: 400mg 이하</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>카페인 반감기는 개인의 대사율에 따라 다를 수 있습니다.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
